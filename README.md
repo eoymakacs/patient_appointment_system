@@ -5,14 +5,13 @@ Bu proje, basit fakat gerçekçi bir **Randevu Yönetim Sistemi (Appointment Sch
 ---
 
 ## 🛠 Özellikler
-
-✔ Patients, Providers, Appointments için CRUD API
-✔ Provider randevularında çakışma kontrolü
-✔ Django REST Framework ile hızlı API geliştirme
-✔ SQLite destekli basit ve hafif veritabanı
-✔ DRF'de ViewSet + Router kullanımı
-✔ JSON tabanlı request/response
-✔ Genişletilebilir uygulama mimarisi
+- Patients, Providers, Appointments için CRUD API
+- Provider randevularında çakışma kontrolü
+- Django REST Framework ile hızlı API geliştirme
+- SQLite destekli basit ve hafif veritabanı
+- DRF'de ViewSet + Router kullanımı
+- JSON tabanlı request/response
+- Genişletilebilir uygulama mimarisi
 
 ## 📂 Proje Yapisi
 ```plaintext
@@ -43,35 +42,35 @@ Her app — modeller, view’ler, serializer’lar ve URL yönlendirmeleri gibi 
 
 ## 🚀 Kurulum
 
-1. Repoyu Klonla
+**1.** Repoyu Klonla
 ```bash
 git clone https://github.com/.../patient_appointment_system.git
 cd patient_appointment_system
 ```
 
-2. Sanal Ortam
+**2.** Sanal Ortam
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Bağımlılıkları Yükle
+**3.** Bağımlılıkları Yükle
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Veritabanını Oluştur
+**4.** Veritabanını Oluştur
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-5. (Opsiyonel) Admin Kullanıcısı
+**5**. (Opsiyonel) Admin Kullanıcısı
 ```bash
 python manage.py createsuperuser
 ```
 
-6. Server’ı Başlat
+**6**. Server’ı Başlat
 ```bash
 python manage.py runserver
 ```
@@ -165,7 +164,7 @@ Python Virtual Environment
 ## 📌 Notlar
 
 ```bash 
-  .gitignore
+.gitignore
 ```
 
 ```bash __pycache__ ``` klasörlerini ignore etmek için:
