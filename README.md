@@ -60,23 +60,52 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-**3.** Bağımlılıkları Yükle
+**3.** Gerekli paketleri yükle
 ```bash
 pip install -r requirements.txt
 ```
 
-**4.** Veritabanını Oluştur
+**4.** Bağımlılıkları Yükle
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+pip install -r requirements.txt
 ```
 
-**5**. (Opsiyonel) Admin Kullanıcısı
+**5.** Veritabanı Ayarları
+ ## Varsayılan DB: SQLite (hazır geliyor)
+ Ekstra kurulum gerektirmez.
+
+ ## PostgreSQL kullanmak istersen
+ - requirements.txt’ye ekle:
+   ```bash
+   psycopg2-binary
+   ```
+ - settings.py → DATABASES bölümünü değiştir:
+  ```python 
+   DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "appointments",
+        "USER": "postgres",
+        "PASSWORD": "yourpassword",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
+```
+
+ ## Migration Çalıştır
+ 
+ ```bash
+ python manage.py makemigrations
+ python manage.py migrate
+ ```
+
+**6**. (Opsiyonel) Admin Kullanıcısı
 ```bash
 python manage.py createsuperuser
 ```
 
-**6**. Server’ı Başlat
+**7**. Server’ı Başlat
 ```bash
 python manage.py runserver
 ```
@@ -159,11 +188,11 @@ python manage.py test
 
 ## 🔧 Teknolojiler
 
-Python 3.10+
-Django 4.x
-Django REST Framework
-SQLite
-Python Virtual Environment
+- Python 3.10+
+- Django 4.x
+- Django REST Framework
+- SQLite
+- Python Virtual Environment
 
 ---
 
