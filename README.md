@@ -15,26 +15,32 @@ Bu proje, basit fakat gerçekçi bir **Randevu Yönetim Sistemi (Appointment Sch
 
 ## 📂 Proje Yapisi
 ```plaintext
-patient_appointment_system/
+ patient_appointment_system/          <- Proje root (ana klasör)
 │
-├── manage.py
-├── db.sqlite3
-├── requirements.txt
+├── db.sqlite3               <- SQLite veritabanı (otomatik oluşturulur)
+├── manage.py                <- Django yönetim komutu (server çalıştırma, migrate vb.)
+├── requirements.txt         <- Kullanılan Python paketleri listesi (opsiyonel ama iyi)
 │
-├── patient_appointment_system/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-│   └── asgi.py
+├── patient_appointment_system/       <- Ana proje klasörü (settings, global urls, wsgi/asgi)
+│   ├── __init__.py          <- Python package olduğunu belirtir
+│   ├── settings.py          <- Tüm proje ayarları (DB, apps, middleware, static, template vb.)
+│   ├── urls.py              <- Proje genel URL yönlendirmeleri
+│   ├── asgi.py              <- Asynchronous Server Gateway Interface (opsiyonel)
+│   └── wsgi.py              <- WSGI server için giriş noktası (prod ortamı)
 │
-└── appointments/
-    ├── models.py
-    ├── views.py
-    ├── serializers.py
-    ├── urls.py
-    ├── admin.py
-    ├── tests.py
-    └── migrations/
+└── appointments/            <- Django App klasörü (bizim CRUD / API logic)
+    ├── __init__.py          <- Python package olduğunu belirtir
+    ├── admin.py             <- Admin panelde modellerin görünmesini sağlar
+    ├── apps.py              <- App config bilgileri
+    ├── models.py            <- DB tabloları (ORM) burada tanımlanır
+    ├── serializers.py       <- Model verilerini JSON’a çeviren serializerlar
+    ├── views.py             <- API / business logic / ViewSetler burada
+    ├── urls.py              <- App’e özel URL routing (API endpointleri)
+    ├── tests.py             <- Basit test case’leri (opsiyonel ama önerilir)
+    └── migrations/          <- Model değişiklikleri için migration dosyaları
+        ├── __init__.py
+        └── 0001_initial.py (ilk migration)
+
 ```
 Her app — modeller, view’ler, serializer’lar ve URL yönlendirmeleri gibi kendi logic’ini içerir. Django’nun modüler mimarisine uygundur.
 
