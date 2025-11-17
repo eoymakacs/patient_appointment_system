@@ -1,3 +1,5 @@
+# DRF serializer’lar
+
 from rest_framework import serializers
 from .models import Patient, Provider, Appointment
 

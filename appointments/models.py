@@ -1,3 +1,5 @@
+# DB modelleri
+
 from django.db import models
 
 

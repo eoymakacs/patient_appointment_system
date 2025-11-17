@@ -1,4 +1,5 @@
-# appointments/urls.py
+# App-level routing
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import PatientViewSet, ProviderViewSet, AppointmentViewSet

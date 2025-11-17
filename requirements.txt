@@ -1,0 +1,8 @@
+Django>=5.0
+djangorestframework
+
+python-dotenv
+
+# Optional (ama önerilir)
+django-cors-headers
+drf-yasg

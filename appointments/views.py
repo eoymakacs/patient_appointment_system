@@ -1,3 +1,4 @@
+# API endpoint’ler
 from rest_framework import viewsets, filters
 from .models import Patient, Provider, Appointment
 from .serializers import PatientSerializer, ProviderSerializer, AppointmentSerializer
